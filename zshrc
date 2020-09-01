@@ -1,30 +1,17 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/dqopb/.oh-my-zsh
+export ZSH="/Users/shoarai/.oh-my-zsh"
+export ZSH_DISABLE_COMPFIX=true
 
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# Language
 
-# env ##############################################
-
-# anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
+
 eval "$(anyenv init -)"
 
-# nodenv
-eval "$(nodenv init -)"
-
-
-# language settings ##############################################
-
-# yarn
-export PATH="$HOME/.yarn/bin:$PATH"
-
-# postgres
-export PGDATA='/usr/local/var/postgres'
-
-
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # zsh configs ##############################################
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -99,6 +86,7 @@ setopt hist_reduce_blanks
 # 補完候補が複数あるときに自動的に一覧表示する
 setopt auto_menu
 
+
 # Alias ###################################################################
 
 # Linux
@@ -125,36 +113,6 @@ alias mv="mv -i"
 alias -g JQ="| jq"
 alias -g ZSH="~/.zshrc"
 
-# Language
-## yarn
-alias y="yarn"
-alias reins-y="rm -rf node_modules && y cache clean && y"
-alias cache-y="yarn cache --clean"
-
-## npm
-alias nr="npm run"
-alias ni="npm ci"
-alias reins-npm="rm -rf node_modules && npm cache clean --force && npmi" 
-
-## bundle
-alias be="bundle exec"
-
-
-# Docker
-alias doc="docker"
-alias docc="docker-compose"
-alias docm="docker-machine"
-alias docremove-c="docker rm `docker ps -a -q`"
-alias docremove-i="docker rmi $(docker images -q)"
-alias docstop-all="docker stop $(docker ps -q)"
-alias doccps="docker-compose ps"
-
-
-# hadoop
-# alias hadoop-start="sh /usr/local/Cellar/hadoop/2.7.3/sbin/start-all.sh"
-# alias hadoop-restart="sh /usr/local/Cellar/hadoop/2.7.3/sbin/stop-all.sh && sh /usr/local/Cellar/hadoop/2.7.3/sbin/start-all.sh"
-# alias hadoop-stop="sh /usr/local/Cellar/hadoop/2.7.3/sbin/stop-all.sh"
-
 
 # alias git
 alias add="git add ."
@@ -176,18 +134,3 @@ alias st="git status"
 alias log="git log --oneline"
 alias pull="git pull origin"
 alias fetch="git fetch"
-
-################################################################################
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/dqopb/google-cloud-sdk/path.zsh.inc' ];
-  then
-    source '/Users/dqopb/google-cloud-sdk/path.zsh.inc';
-fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/dqopb/google-cloud-sdk/completion.zsh.inc' ];
-  then
-    source '/Users/dqopb/google-cloud-sdk/completion.zsh.inc';
-fi
-
