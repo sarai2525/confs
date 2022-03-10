@@ -20,7 +20,6 @@ plugins=(
   git
   zsh-syntax-highlighting
   zsh-completions
-  zsh-autosuggestions
 )
 
 autoload -U compinit && compinit -u
@@ -113,14 +112,22 @@ alias mv="mv -i"
 alias -g JQ="| jq"
 alias -g ZSH="~/.zshrc"
 
+# Docker
+alias doc="docker"
+alias docc="docker-compose"
+alias docm="docker-machine"
+alias docremove-c="docker rm `docker ps -a -q`"
+alias docremove-i="docker rmi $(docker images -q)"
+alias docstop-all="docker stop $(docker ps -q)"
+alias doccps="docker-compose ps"
 
 # alias git
-alias add="git add ."
 alias ad="git ad"
+alias add="git add ."
 alias co="git commit -m"
 alias co-amend="git co-amend"
 alias dif="git dif"
-alias push="git push origin"
+alias push="git pus"
 alias rst="git rst"
 alias rst-h="git reset --hard"
 alias rst-m="git reset --mixed"
@@ -132,5 +139,10 @@ alias ch="git ch"
 alias ch-b="git checkout -b"
 alias st="git status"
 alias log="git log --oneline"
-alias pull="git pull origin"
+alias pull="git pul"
 alias fetch="git fetch"
+alias sts="git stash save"
+alias stsp="git stash pop"
+alias std="git std"
+alias sta="git sta"
+alias chp="git cherry-pick"
